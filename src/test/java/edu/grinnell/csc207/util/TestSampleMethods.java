@@ -26,4 +26,17 @@ public class TestSampleMethods {
   void sampleFailingTest() {
     assertEquals(2, 3);
   } // sampleFailingTest()
+
+  public void test2() {
+    assertEquals(10, 3*5, "stupid test");  } // test2()
+
+  @Test
+  void testConvert0CelciusTo32Far() {
+    assertEquals(32, SampleMethods.c2f(0), "0 C is 32 F");
+  }
+
+  @Test
+  void testConvert100CelciusTo212Far() {
+    assertEquals(212, SampleMethods.c2f(100), "100 C is 212 F");
+  }
 } // class TestSampleMethods

@@ -16,7 +16,7 @@ public class SampleMethodsExperiments {
    */
   public static void main(String[] args) {
     PrintWriter pen = new PrintWriter(System.out, true);
-    removeAsExperiments(pen);
+    exptExperiments(pen);
     pen.close();
   } // main()
 
@@ -51,4 +51,46 @@ public class SampleMethodsExperiments {
     String tmp = SampleMethods.removeAs(str);
     pen.println("\"" + tmp + "\"");
   } // removeAsExperiment(PrintWriter, String)
+
+  public static void removeBsExperiments(PrintWriter pen) {
+    removeBsExperiment(pen, "");
+    removeBsExperiment(pen, "hello");
+    removeBsExperiment(pen, "b");
+    removeBsExperiment(pen, "bbbb");
+    removeBsExperiment(pen, "bread");
+    removeBsExperiment(pen, "blabber");
+    removeBsExperiment(pen, "abbbbcbdbbbebbfbbbbgbbHbb");
+    removeBsExperiment(pen, "bbbaaabbb");
+  } // removeAsExperiments
+
+  /**
+   * A single experiment with <code>removeAs</code>.
+   *
+   * @param pen
+   *   Where to print output from the experiments.
+   * @param str
+   *   A string to use as a parameter to <code>removeAs</code>.
+   */
+  public static void removeBsExperiment(PrintWriter pen, String str) {
+    pen.print("removeAs(\"" + str + "\") = ");
+    pen.flush();
+    String tmp = SampleMethods.removeBs(str);
+    pen.println("\"" + tmp + "\"");
+  } // removeAsExperiment(PrintWriter, String)
+
+  /**
+   * Some quick experiments with the expt method.
+   */
+  public static void exptExperiments(PrintWriter pen) {
+    exptExperiment(pen, 2, 10);
+  } // exptExperiments(PrintWriter)
+
+  /** 
+   * One quick experiment with the expt method.
+   */
+  public static void exptExperiment(PrintWriter pen, int base, int exponent) {
+    pen.print(base + "^" + exponent + " = ");
+    pen.flush();
+    pen.println(SampleMethods.expt(base, exponent));
+  } // exptExperiment(String[])
 } // class SampleMethodsExperiment
